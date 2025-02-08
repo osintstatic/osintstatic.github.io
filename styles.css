@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .night-sky {
     position: fixed;
     top: 0;
@@ -85,7 +86,6 @@ body {
 }
 
 .username {
-    position: relative;
     color: white;
     background-image: linear-gradient(45deg, rgb(255, 255, 255));
     background-clip: text;
@@ -111,7 +111,6 @@ body {
 }
 
 .date {
-    position: relative;
     color: white;
     background-image: linear-gradient(45deg, rgb(255, 255, 255));
     background-clip: text;
@@ -120,6 +119,7 @@ body {
     font-size: 40px;
     padding: 0;
 }
+
 .username::after, .date::after {
     content: '';
     position: absolute;
@@ -136,56 +136,34 @@ body {
 .container:hover .username::after, .container:hover .date::after {
     transform: translate(-50%, -50%);
 }
-.day {
-    position: absolute;
+
+.day, .week, .hours, .min, .secs {
     color: white;
-    
     background-clip: text;
     -webkit-background-clip: text;
-    margin-top: 70px;
+    position: absolute;
     margin-left: 20px;
+}
+
+.day {
+    margin-top: 70px;
 }
 
 .week {
-    position: absolute;
-    color: white;
-    
-    background-clip: text;
-    -webkit-background-clip: text;
     margin-top: 90px;
-    margin-left: 20px;
 }
 
 .hours {
-    position: absolute;
-    color: white;
-    
-    background-clip: text;
-    -webkit-background-clip: text;
     margin-top: 110px;
-    margin-left: 20px;
 }
 
 .min {
-    position: absolute;
-    color: white;
-    
-    background-clip: text;
-    -webkit-background-clip: text;
     margin-top: 130px;
-    margin-left: 20px;
 }
 
 .secs {
-    position: absolute;
-    color: white;
-    
-    background-clip: text;
-    -webkit-background-clip: text;
     margin-top: 150px;
-    margin-left: 20px;
 }
-
 
 .date {
     margin: 0;
@@ -211,4 +189,27 @@ body {
 
 .social-links img {
     width: 40px;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    .avatar img {
+        width: 100px; /* Уменьшаем размер аватарки */
+    }
+
+    .username {
+        font-size: 30px; /* Уменьшаем размер шрифта для имени */
+    }
+
+    .date {
+        font-size: 25px; /* Уменьшаем размер шрифта для даты */
+    }
+
+    .day, .week, .hours, .min, .secs {
+        font-size: 20px; /* Уменьшаем размер шрифта для других элементов */
+    }
+    
+    .container {
+        padding: 20px; /* Добавляем отступы для лучшего отображения на мобильных */
+    }
 }
