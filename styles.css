@@ -65,11 +65,23 @@ body {
     text-align: center;
 }
 
+@keyframes pulse {
+    0%, 100% {
+        border-color: rgb(255, 77, 77); /* Яркий красный цвет */
+        transform: scale(1);
+    }
+    50% {
+        border-color: rgb(206, 59, 59); /* Темный красный цвет */
+        transform: scale(1.05); /* Увеличение на 5% */
+    }
+}
+
 .avatar img {
     width: 150px; 
     border-radius: 50%;
-    border: 3px solid red; 
+    border: 3px solid rgb(255, 77, 77); /* Яркий красный цвет */
     margin-bottom: 10px;
+    animation: pulse 1.5s infinite; /* Применение анимации */
 }
 
 .username {
